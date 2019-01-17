@@ -1,0 +1,8 @@
+ apiVersion: v1
+kind: Service
+metadata:
+  name: heart-service
+spec:
+  selector:
+    app: heart-app
+  type: LoadBalancer

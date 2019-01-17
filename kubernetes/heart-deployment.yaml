@@ -1,0 +1,17 @@
+apiVersion: apps/v1beta1 # for versions before 1.8.0 use apps/v1beta1
+kind: Deployment
+metadata:
+  name: rawingestion-heart-deployment
+spec:
+  selector:
+    matchLabels:
+      app: rawingestion-heart
+  replicas: 1 # tells deployment to run 3 pods matching the template
+  template: # create pods using pod definition in this template
+    metadata:
+      labels:
+        app: rawingestion-heart
+    spec:
+      containers:
+      - name: rawingestion-heart
+        image: kastellanos/scala-spark
